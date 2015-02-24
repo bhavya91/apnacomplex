@@ -14,10 +14,6 @@ body#home {
     padding-top: 15px;
     
     #login-actions {
-      position: absolute;
-      top: 0;
-      right:0;
-
       a {
         &, &:hover, &:visited {
           background-color: $blue;
@@ -47,24 +43,27 @@ body#home {
   }
   
   #land {
-    width: 100vw;
-    height: 100vh;
+    @include fullscreen;
     background-image: url('../images/land.jpg');
     background-size: cover;
-    box-sizing: border-box;
     text-align: center;
     color: $white;
-    border: 1px solid transparent;
     
     #land_container {
-      position: relative;
-      top: 50%;
-      transform: translateY(-50%);
+      @include vertical-center;
     
       h1 {
         font-weight: 300;
         font-size: 4vw;
       }
     }
+  }
+
+  #features {
+    @include fullscreen;
+    
+    h1 {
+      @include vertical-center;
+    }   
   }
 }
