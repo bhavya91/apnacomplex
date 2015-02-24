@@ -1,0 +1,70 @@
+body#home {
+  background-color: $white;
+  padding: 0;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  position: relative;
+  
+  header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding-top: 15px;
+    
+    #login-actions {
+      position: absolute;
+      top: 0;
+      right:0;
+
+      a {
+        &, &:hover, &:visited {
+          background-color: $blue;
+          color: $white;
+          border-radius: 4px;
+          margin: 1em 2em 0 0;
+          text-decoration: none;
+          padding: 0.5em 1em;
+          width: 8em;
+          display: inline-block;
+          font-weight: 300;
+        }
+
+        &:hover {
+          background-color: darken($blue, 5%);
+        }
+
+        &#signup {
+          background-color: $green;
+          
+          &:hover {
+            background-color: darken($green, 5%);
+          }
+        }
+      }
+    }
+  }
+  
+  #land {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../images/land.jpg');
+    background-size: cover;
+    box-sizing: border-box;
+    text-align: center;
+    color: $white;
+    border: 1px solid transparent;
+    
+    #land_container {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    
+      h1 {
+        font-weight: 300;
+        font-size: 4vw;
+      }
+    }
+  }
+}
