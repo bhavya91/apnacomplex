@@ -1,8 +1,10 @@
 @mixin fullscreen {
   width: 100vw;
   height: 100vh;
+  max-width: 100%;
   border: 1px solid transparent;
   box-sizing: border-box;
+  position: relative;
 }
 
 @mixin vertical-center {

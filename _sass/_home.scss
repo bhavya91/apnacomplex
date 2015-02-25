@@ -12,6 +12,7 @@ body#home {
     right: 0;
     text-align: center;
     padding-top: 15px;
+    z-index: 1000;
     
     #login-actions {
       a {
@@ -56,14 +57,81 @@ body#home {
         font-weight: 300;
         font-size: 4vw;
       }
+
+      h2 {
+        font-weight: 300;
+        font-size: 2vw;
+      }
     }
+
+    #explore_container {
+      position: absolute;
+      bottom: 3em;
+      left: 0;
+      right: 0;
+      text-align: center;
+      
+      #explore_arrow {
+        height: 0;
+        width: 0;
+        border-top: 3em solid $orange;
+        border-left: 7em solid transparent;
+        border-right: 7em solid transparent;
+        margin: 0 auto -2.5em;
+      }
+
+      &:hover #explore_arrow  {
+        border-top-color: darken($orange, 5%);
+      }
+
+      a#explore {
+        &, &:hover, &:focus {
+          color: $white;
+          text-decoration: none;
+          font-weight: 300;
+        }
+      }
+    } 
   }
 
   #features {
-    @include fullscreen;
-    
-    h1 {
-      @include vertical-center;
-    }   
+    .feature {
+      padding: 3em 0;
+      
+      h2 {
+        font-size: 3em;
+        margin-bottom: 1em;
+        font-weight: 300;
+      }
+
+      .sub-feature {
+        text-align: center;
+        margin-bottom: 5em;
+        
+        h3 {
+          font-size: 1.5em;
+          font-weight: 300;
+          height: 2.5em;
+        }
+
+        img {
+          height: 50px;
+        }
+
+        a.read_more {
+          &, &:hover, &:visited {
+            font-size: 0.8em;
+            background: $grey;
+            color: $white;
+            padding: 0.4em 1em;
+            border-radius: 3px;
+            text-decoration: none;
+          }
+          &:hover {
+            background: darken($grey, 5%);
+          }
+        }
+      }
+    }
   }
 }
