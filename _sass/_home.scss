@@ -15,7 +15,28 @@ body#home {
     z-index: 1000;
     
     #login-actions {
-      a {
+      a.nav-links {
+        &, &:hover, &:visited {
+          color: $white;
+          font-weight: 300;
+          text-decoration: none;
+        }
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      .separator {
+        color: $white;
+        margin: 0 1em;
+      }
+
+      #buttons_container {
+        margin-left: 2em;
+      }
+
+      a.nav-button {
         &, &:hover, &:visited {
           background-color: $blue;
           color: $white;
