@@ -1,0 +1,54 @@
+---
+layout: admin
+---
+<div class="container">
+  <h1>Payments</h1>
+
+  <div class="search-container">
+    <div class="form-group">
+      <div class="input-group">
+        <div class="row">
+          <div class="col-md-6 search-field">
+            <input type="text" class="form-control" placeholder="Enter Search Text">
+          </div>
+          <div class="col-md-4 search-field">
+            <select class="form-control" id="select">
+              <option>Any</option>
+              <option>Receipt Number</option>
+              <option>Cheque Number</option>
+              <option>Draft Number</option>
+              <option>NEFT Txn #</option>
+              <option>Overseas Transfer Txn #</option>
+            </select><!-- 
+            <span class="input-group-btn">
+                <a href="#" class="btn btn-default">Any</a>
+                <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Receipt Number</a></li>
+                  <li><a href="#">Cheque Number</a></li>
+                  <li><a href="#">Draft Number</a></li>
+                  <li><a href="#">Draft Number</a></li>
+                  <li><a href="#">NEFT Txn #</a></li>
+                  <li><a href="#">Overseas Transfer Txn #</a></li>
+                </ul>
+            </span> -->
+          </div>
+          <div class="col-md-2 search-field">
+            <span class="input-group-btn">
+              <button class="btn btn-primary" type="button">Search</button>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="period-selector">
+    <span>Show:</span>
+    <a href="#" class="btn btn-primary">Current Month</a>
+    <a href="#" class="btn btn-default">Last Month</a>
+    <a href="#" class="btn btn-default">Last 3 Months</a>
+    <a href="#" class="btn btn-default">All</a>
+  </div>
+
+</div>

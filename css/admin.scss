@@ -1,0 +1,21 @@
+---
+---
+#admin {
+  .period-selector {
+    span{
+      margin-right: 1em;
+    }
+
+    a {
+      width: 10em;
+    }
+  }
+
+  .search-container {
+    margin: 1em;
+
+    .search-field {
+      padding: 0 0;
+    }
+  }
+}
