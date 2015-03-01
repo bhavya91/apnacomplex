@@ -10,7 +10,7 @@ layout: admin
       <div class="input-group">
         <div class="row">
           <div class="col-md-6 search-field">
-            <input type="text" class="form-control" placeholder="Enter Search Text">
+            <input type="text" class="form-control" placeholder="Enter Search Text" ng-model="query">
           </div>
           <div class="col-md-4 search-field">
             <select class="form-control" id="select">
@@ -116,7 +116,7 @@ layout: admin
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="payment in payments">
+      <tr ng-repeat="payment in payments | filter: query">
         {% raw %}
         <td><input type="checkbox"></td>
         <td ng-show="showBlock">{{payment.block}}</td>

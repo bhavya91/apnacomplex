@@ -10,6 +10,7 @@ admin.controller('ListController', ['$scope', '$http', function($scope, $http) {
   $scope.showPaymentType = true;
   $scope.showAmout = true;
   $scope.showPaymentDate = true;
+  $scope.showChequeNo = true;
   $scope.showStatus = true;
   $scope.showActions = true;
 
