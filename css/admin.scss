@@ -18,4 +18,31 @@
       padding: 0 0;
     }
   }
+
+  .bulk-actions-container {
+    .bulk-actions {
+      i {
+        margin-right: 1em;
+      }
+    }
+  }
+
+  table {
+    margin-top: 2em;
+    
+    th {
+      .row-actions {
+        white-space: nowrap;
+
+        i {
+          margin-right: 0.6em;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .pagination-container {
+    text-align: center;
+  }
 }
