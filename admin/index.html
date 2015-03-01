@@ -65,9 +65,26 @@ layout: admin
       </a>
     </div>
 
-    <a href="#" class="btn btn-primary" title="Modify Visible Columns">
-      <i class="fa fa-cog"></i>
-    </a>
+    <div class="btn-group">
+      <a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Modify Visible Columns">
+        <i class="fa fa-cog"></i>
+      </a>
+      <ul class="dropdown-menu">
+        <li><span class="checkbox-container"><input type="checkbox" ng-model="showBlock"></span><span class="column-text">Block</span></li>
+        <li><span class="checkbox-container"><input type="checkbox" ng-model="showUnit"></span><span class="column-text">Unit</span></li>
+        <li><span class="checkbox-container"><input type="checkbox" ng-model="showPaymentType"></span><span class="column-text">Payment Type</span></li>
+        <li><span class="checkbox-container"><input type="checkbox" ng-model="showAmount"></span><span class="column-text">Amount</span></li>
+        <li><span class="checkbox-container"><input type="checkbox" ng-model="showPaymentDate"></span><span class="column-text">Payment Date</span></li>
+        <li><span class="checkbox-container"><input type="checkbox" ng-model="showBankName"></span><span class="column-text">Bank Name</span></li>
+        <li><span class="checkbox-container"><input type="checkbox" ng-model="showDated"></span><span class="column-text">Dated</span></li>
+        <li><span class="checkbox-container"><input type="checkbox" ng-model="showChequeNo"></span><span class="column-text">Cheque No</span></li>
+        <li><span class="checkbox-container"><input type="checkbox" ng-model="showReceiptNo"></span><span class="column-text">Receipt No</span></li>
+        <li><span class="checkbox-container"><input type="checkbox" ng-model="showDepositedIn"></span><span class="column-text">Deposited In</span></li>
+        <li><span class="checkbox-container"><input type="checkbox" ng-model="showPaymentNarration"></span><span class="column-text">Payment Narration</span></li>
+        <li><span class="checkbox-container"><input type="checkbox" ng-model="showStatus"></span><span class="column-text">Status</span></li>
+        <li><span class="checkbox-container"><input type="checkbox" ng-model="showActions"></span><span class="column-text">Actions</span></li>
+      </ul>
+    </div>
   </div>
 
   <div class="period-selector">
@@ -82,38 +99,38 @@ layout: admin
     <thead>
       <tr>
         <th><input type="checkbox"></th>
-        <th>Block <div class="row-actions"><i class="fa fa-filter"></i><i class="fa fa-sort"></i><i class="fa fa-minus-circle"></i></div></th>
-        <th>Unit # <div class="row-actions"><i class="fa fa-filter"></i><i class="fa fa-sort"></i><i class="fa fa-minus-circle"></i></div></th>
-        <th>Payment Type <div class="row-actions"><i class="fa fa-filter"></i><i class="fa fa-sort"></i><i class="fa fa-minus-circle"></i></div></th>
-        <th>Amount <div class="row-actions"><i class="fa fa-filter"></i><i class="fa fa-sort"></i><i class="fa fa-minus-circle"></i></div></th>
-        <th>Payment Date <div class="row-actions"><i class="fa fa-filter"></i><i class="fa fa-sort"></i><i class="fa fa-minus-circle"></i></div></th>
-        <th>Bank Name <div class="row-actions"><i class="fa fa-filter"></i><i class="fa fa-sort"></i><i class="fa fa-minus-circle"></i></div></th>
-        <th>Dated <div class="row-actions"><i class="fa fa-filter"></i><i class="fa fa-sort"></i><i class="fa fa-minus-circle"></i></div></th>
-        <th>Cheque<br>/Txn # <div class="row-actions"><i class="fa fa-filter"></i><i class="fa fa-sort"></i><i class="fa fa-minus-circle"></i></div></th>
-        <th>Receipt # <div class="row-actions"><i class="fa fa-filter"></i><i class="fa fa-sort"></i><i class="fa fa-minus-circle"></i></div></th>
-        <th>Deposited In <div class="row-actions"><i class="fa fa-filter"></i><i class="fa fa-sort"></i><i class="fa fa-minus-circle"></i></div></th>
-        <th>Payment<br>Narration <div class="row-actions"><i class="fa fa-filter"></i><i class="fa fa-sort"></i><i class="fa fa-minus-circle"></i></div></th>
-        <th>Status <div class="row-actions"><i class="fa fa-filter"></i><i class="fa fa-sort"></i><i class="fa fa-minus-circle"></i></div></th>
-        <th>Action <div class="row-actions"><i class="fa fa-filter"></i><i class="fa fa-sort"></i><i class="fa fa-minus-circle"></i></div></th>
+        <th ng-show="showBlock">Block <div class="row-actions"><i class="fa fa-filter"></i><i class="fa fa-sort"></i><i class="fa fa-minus-circle" ng-click="hideColumn('block')"></i></div></th>
+        <th ng-show="showUnit">Unit # <div class="row-actions"><i class="fa fa-filter"></i><i class="fa fa-sort"></i><i class="fa fa-minus-circle" ng-click="hideColumn('unit')"></i></div></th>
+        <th ng-show="showPaymentType">Payment Type <div class="row-actions"><i class="fa fa-filter"></i><i class="fa fa-sort"></i><i class="fa fa-minus-circle" ng-click="hideColumn('paymentType')"></i></div></th>
+        <th ng-show="showAmount">Amount <div class="row-actions"><i class="fa fa-filter"></i><i class="fa fa-sort"></i><i class="fa fa-minus-circle" ng-click="hideColumn('amount')"></i></div></th>
+        <th ng-show="showPaymentDate">Payment Date <div class="row-actions"><i class="fa fa-filter"></i><i class="fa fa-sort"></i><i class="fa fa-minus-circle" ng-click="hideColumn('paymentDate')"></i></div></th>
+        <th ng-show="showBankName">Bank Name <div class="row-actions"><i class="fa fa-filter"></i><i class="fa fa-sort"></i><i class="fa fa-minus-circle" ng-click="hideColumn('bankName')"></i></div></th>
+        <th ng-show="showDated">Dated <div class="row-actions"><i class="fa fa-filter"></i><i class="fa fa-sort"></i><i class="fa fa-minus-circle" ng-click="hideColumn('dated')"></i></div></th>
+        <th ng-show="showChequeNo">Cheque<br>/Txn # <div class="row-actions"><i class="fa fa-filter"></i><i class="fa fa-sort"></i><i class="fa fa-minus-circle" ng-click="hideColumn('chequeNo')"></i></div></th>
+        <th ng-show="showReceiptNo">Receipt # <div class="row-actions"><i class="fa fa-filter"></i><i class="fa fa-sort"></i><i class="fa fa-minus-circle" ng-click="hideColumn('receiptNo')"></i></div></th>
+        <th ng-show="showDepositedIn">Deposited In <div class="row-actions"><i class="fa fa-filter"></i><i class="fa fa-sort"></i><i class="fa fa-minus-circle" ng-click="hideColumn('depositedIn')"></i></div></th>
+        <th ng-show="showPaymentNarration">Payment<br>Narration <div class="row-actions"><i class="fa fa-filter"></i><i class="fa fa-sort"></i><i class="fa fa-minus-circle" ng-click="hideColumn('paymentNarration')"></i></div></th>
+        <th ng-show="showStatus">Status <div class="row-actions"><i class="fa fa-filter"></i><i class="fa fa-sort"></i><i class="fa fa-minus-circle" ng-click="hideColumn('status')"></i></div></th>
+        <th ng-show="showActions">Actions <div class="row-actions"><i class="fa fa-filter"></i><i class="fa fa-sort"></i><i class="fa fa-minus-circle" ng-click="hideColumn('actions')"></i></div></th>
       </tr>
     </thead>
     <tbody>
       <tr ng-repeat="payment in payments">
         {% raw %}
         <td><input type="checkbox"></td>
-        <td>{{payment.block}}</td>
-        <td>{{payment.unit}}</td>
-        <td>{{payment.paymentType}}</td>
-        <td>{{payment.amount}}</td>
-        <td>{{payment.paymentDate}}</td>
-        <td>{{payment.bankName}}</td>
-        <td>{{payment.dated}}</td>
-        <td>{{payment.chequeNo}}</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>{{payment.status}}</td>
-        <td>
+        <td ng-show="showBlock">{{payment.block}}</td>
+        <td ng-show="showUnit">{{payment.unit}}</td>
+        <td ng-show="showPaymentType">{{payment.paymentType}}</td>
+        <td ng-show="showAmount">{{payment.amount}}</td>
+        <td ng-show="showPaymentDate">{{payment.paymentDate}}</td>
+        <td ng-show="showBankName">{{payment.bankName}}</td>
+        <td ng-show="showDated">{{payment.dated}}</td>
+        <td ng-show="showChequeNo">{{payment.chequeNo}}</td>
+        <td ng-show="showReceiptNo">-</td>
+        <td ng-show="showDepositedIn">-</td>
+        <td ng-show="showPaymentNarration">-</td>
+        <td ng-show="showStatus">{{payment.status}}</td>
+        <td ng-show="showActions">
           <i class="fa fa-list" title="Details"></i>
           <i class="fa fa-undo" title="Revert"></i>
           <i class="fa fa-trash-o" title="Delete"></i>

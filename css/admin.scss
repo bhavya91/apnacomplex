@@ -1,5 +1,10 @@
 ---
 ---
+@charset "utf-8";
+
+@import "theme";
+@import "mixins";
+
 #admin {
   .period-selector {
     span{
@@ -23,6 +28,30 @@
     .bulk-actions {
       i {
         margin-right: 1em;
+      }
+    }
+
+    .dropdown-menu {
+      right: 0;
+      left: auto;
+      
+      li {
+        color: $white;
+        padding: 12px 15px;
+        font-size: 1.2em;
+        
+        &:hover {
+          background-color: #006d91;
+        }
+        
+        .checkbox-container {
+          padding: 0 0;
+          vertical-align: middle;
+        }
+
+        .column-text {
+          margin-left: 15px;
+        }
       }
     }
   }
