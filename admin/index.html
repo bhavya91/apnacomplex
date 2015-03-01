@@ -5,14 +5,14 @@ layout: admin
   <a href="#" class="btn btn-success help-trigger pull-right wow bounceInLeft" data-wow-offset="50" data-wow-duration="3s" data-wow-delay="1s" onclick="introJs().start(); return false;"><i class="fa fa-info-circle"></i> Help</a>
   <h1>Payments</h1>
 
-  <div class="search-container" data-step="2" data-intro="Search here">
+  <div class="search-container">
     <div class="form-group">
       <div class="input-group">
         <div class="row">
           <div class="col-md-6 search-field">
-            <input type="text" class="form-control" placeholder="Enter Search Text" ng-model="query">
+            <input type="text" class="form-control" placeholder="Enter Search Text" ng-model="query" data-step="2" data-intro="You can search for any field.">
           </div>
-          <div class="col-md-4 search-field">
+          <div class="col-md-4 search-field" data-step="3" data-intro="You can narrow down the search results by further searching by Receipt No., Cheque No., Receipt No., etc..">
             <select class="form-control" id="select">
               <option>Any</option>
               <option>Receipt Number</option>
@@ -20,19 +20,7 @@ layout: admin
               <option>Draft Number</option>
               <option>NEFT Txn #</option>
               <option>Overseas Transfer Txn #</option>
-            </select><!-- 
-            <span class="input-group-btn">
-                <a href="#" class="btn btn-default">Any</a>
-                <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Receipt Number</a></li>
-                  <li><a href="#">Cheque Number</a></li>
-                  <li><a href="#">Draft Number</a></li>
-                  <li><a href="#">Draft Number</a></li>
-                  <li><a href="#">NEFT Txn #</a></li>
-                  <li><a href="#">Overseas Transfer Txn #</a></li>
-                </ul>
-            </span> -->
+            </select>
           </div>
           <div class="col-md-2 search-field">
             <span class="input-group-btn">
@@ -44,8 +32,8 @@ layout: admin
     </div>
   </div>
 
-  <div class="bulk-actions-container pull-right" data-step="1" data-intro="These are bulk actions">
-    <div class="btn-group">
+  <div class="bulk-actions-container pull-right">
+    <div class="btn-group" data-step="11" data-intro="You can perform bulk actions on all selected payments.">
       <a href="#" class="btn btn-primary" title="Details">
         <i class="fa fa-list"></i>
       </a>
@@ -66,7 +54,7 @@ layout: admin
       </a>
     </div>
 
-    <div class="btn-group">
+    <div class="btn-group" data-step="5" data-intro="You can see other details by clicking on this <i class='fa fa-cog'></i> icon.">
       <a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Modify Visible Columns">
         <i class="fa fa-cog"></i>
       </a>
@@ -88,7 +76,7 @@ layout: admin
     </div>
   </div>
 
-  <div class="period-selector">
+  <div class="period-selector" data-step="1" data-intro="You can choose what payments to show.">
     <span>Show:</span>
     <a href="#" class="btn btn-primary">Current Month</a>
     <a href="#" class="btn btn-default">Last Month</a>
@@ -98,10 +86,10 @@ layout: admin
 
   <table class="table table-striped table-hover table-responsive">
     <thead>
-      <tr>
-        <th><input type="checkbox"></th>
-        <th ng-show="showBlock">Block <div class="row-actions"><i class="fa fa-filter"></i><i class="fa fa-sort"></i><i class="fa fa-minus-circle" ng-click="hideColumn('block')"></i></div></th>
-        <th ng-show="showUnit">Unit # <div class="row-actions"><i class="fa fa-filter"></i><i class="fa fa-sort"></i><i class="fa fa-minus-circle" ng-click="hideColumn('unit')"></i></div></th>
+      <tr data-step="4" data-intro="Only the most often viewed details are shown by default.">
+        <th data-step="10" data-intro="You can select all payments by using the bulk selector."><input type="checkbox"></th>
+        <th ng-show="showBlock">Block <div class="row-actions"><i class="fa fa-filter"></i><i class="fa fa-sort" data-step="8" data-intro="You can sort the payments based on this column."></i><i class="fa fa-minus-circle" ng-click="hideColumn('block')"></i></div></th>
+        <th ng-show="showUnit">Unit # <div class="row-actions"><i class="fa fa-filter" data-step="7" data-intro="You can narrow down the list by filtering values of this column by clicking on this <i class='fa fa-filter'></i> icon."></i><i class="fa fa-sort"></i><i class="fa fa-minus-circle" ng-click="hideColumn('unit')" data-step="6" data-intro="You can remove the column by clicking here."></i></div></th>
         <th ng-show="showPaymentType">Payment Type <div class="row-actions"><i class="fa fa-filter"></i><i class="fa fa-sort"></i><i class="fa fa-minus-circle" ng-click="hideColumn('paymentType')"></i></div></th>
         <th ng-show="showAmount">Amount <div class="row-actions"><i class="fa fa-filter"></i><i class="fa fa-sort"></i><i class="fa fa-minus-circle" ng-click="hideColumn('amount')"></i></div></th>
         <th ng-show="showPaymentDate">Payment Date <div class="row-actions"><i class="fa fa-filter"></i><i class="fa fa-sort"></i><i class="fa fa-minus-circle" ng-click="hideColumn('paymentDate')"></i></div></th>
@@ -131,7 +119,7 @@ layout: admin
         <td ng-show="showDepositedIn">-</td>
         <td ng-show="showPaymentNarration">-</td>
         <td ng-show="showStatus">{{payment.status}}</td>
-        <td ng-show="showActions">
+        <td class="actions" ng-show="showActions" data-step="9" data-intro="You can perform various actions on each of the payments.">
           <i class="fa fa-list" title="Details"></i>
           <i class="fa fa-undo" title="Revert"></i>
           <i class="fa fa-trash-o" title="Delete"></i>
@@ -144,7 +132,7 @@ layout: admin
     </tbody>
   </table>
 
-  <div class="pagination-container">
+  <div class="pagination-container" data-step="12" data-intro="You can browse through payments using the pagination.">
     <ul class="pagination">
       <li class="disabled"><a href="#">Previous</a></li>
       <li class="active"><a href="#">1</a></li>
