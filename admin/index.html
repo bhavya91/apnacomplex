@@ -2,9 +2,10 @@
 layout: admin
 ---
 <div class="container" ng-controller="ListController">
+  <a href="#" class="btn btn-success help-trigger pull-right" onclick="introJs().start(); return false;"><i class="fa fa-info-circle"></i> Help</a>
   <h1>Payments</h1>
 
-  <div class="search-container">
+  <div class="search-container" data-step="2" data-intro="Search here">
     <div class="form-group">
       <div class="input-group">
         <div class="row">
@@ -43,7 +44,7 @@ layout: admin
     </div>
   </div>
 
-  <div class="bulk-actions-container pull-right">
+  <div class="bulk-actions-container pull-right" data-step="1" data-intro="These are bulk actions">
     <div class="btn-group">
       <a href="#" class="btn btn-primary" title="Details">
         <i class="fa fa-list"></i>
