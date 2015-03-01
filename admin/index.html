@@ -1,7 +1,7 @@
 ---
 layout: admin
 ---
-<div class="container">
+<div class="container" ng-controller="ListController">
   <h1>Payments</h1>
 
   <div class="search-container">
@@ -98,20 +98,21 @@ layout: admin
       </tr>
     </thead>
     <tbody>
-      <tr>
+      <tr ng-repeat="payment in payments">
+        {% raw %}
         <td><input type="checkbox"></td>
-        <td>Tower A</td>
-        <td>101</td>
-        <td>Online</td>
-        <td>10,000</td>
-        <td>03/05/2014</td>
+        <td>{{payment.block}}</td>
+        <td>{{payment.unit}}</td>
+        <td>{{payment.paymentType}}</td>
+        <td>{{payment.amount}}</td>
+        <td>{{payment.paymentDate}}</td>
+        <td>{{payment.bankName}}</td>
+        <td>{{payment.dated}}</td>
+        <td>{{payment.chequeNo}}</td>
         <td>-</td>
         <td>-</td>
         <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>Rejected</td>
+        <td>{{payment.status}}</td>
         <td>
           <i class="fa fa-list" title="Details"></i>
           <i class="fa fa-undo" title="Revert"></i>
@@ -120,157 +121,20 @@ layout: admin
           <i class="fa fa-envelope-o" title="Email Receipt"></i>
           <i class="fa fa-download" title="Download Receipt"></i>
         </td>
-      </tr>
-      <tr>
-        <td><input type="checkbox"></td>
-        <td>Tower A</td>
-        <td>101</td>
-        <td>Cash</td>
-        <td>5,000</td>
-        <td>07/05/2014</td>
-        <td>SBI</td>
-        <td>23/05/2014</td>
-        <td>11001</td>
-        <td>5436</td>
-        <td>ICICI</td>
-        <td>-</td>
-        <td>Verified</td>
-        <td>
-          <i class="fa fa-list" title="Details"></i>
-          <i class="fa fa-undo" title="Revert"></i>
-          <i class="fa fa-trash-o" title="Delete"></i>
-          <i class="fa fa-pencil" title="Edit"></i>
-          <i class="fa fa-envelope-o" title="Email Receipt"></i>
-          <i class="fa fa-download" title="Download Receipt"></i>
-        </td>
-      </tr>
-      <tr>
-        <td><input type="checkbox"></td>
-        <td>Tower A</td>
-        <td>101</td>
-        <td>Cash</td>
-        <td>2,000</td>
-        <td>11/05/2014</td>
-        <td></td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>Rejected(User cancelled payment)</td>
-        <td>
-          <i class="fa fa-list" title="Details"></i>
-          <i class="fa fa-undo" title="Revert"></i>
-          <i class="fa fa-trash-o" title="Delete"></i>
-          <i class="fa fa-pencil" title="Edit"></i>
-          <i class="fa fa-envelope-o" title="Email Receipt"></i>
-          <i class="fa fa-download" title="Download Receipt"></i>
-        </td>
-      </tr>
-      <tr>
-        <td><input type="checkbox"></td>
-        <td>Tower A</td>
-        <td>101</td>
-        <td>Adjustment</td>
-        <td>200.10</td>
-        <td>17/05/2014</td>
-        <td>ICICI</td>
-        <td>22/06/2014</td>
-        <td>20112</td>
-        <td>2143</td>
-        <td>ICICI</td>
-        <td>-</td>
-        <td>Verified</td>
-        <td>
-          <i class="fa fa-list" title="Details"></i>
-          <i class="fa fa-undo" title="Revert"></i>
-          <i class="fa fa-trash-o" title="Delete"></i>
-          <i class="fa fa-pencil" title="Edit"></i>
-          <i class="fa fa-envelope-o" title="Email Receipt"></i>
-          <i class="fa fa-download" title="Download Receipt"></i>
-        </td>
-      </tr>
-      <tr>
-        <td><input type="checkbox"></td>
-        <td>Tower A</td>
-        <td>101</td>
-        <td>Online</td>
-        <td>3,000</td>
-        <td>21/05/2014</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>Rejected</td>
-        <td>
-          <i class="fa fa-list" title="Details"></i>
-          <i class="fa fa-undo" title="Revert"></i>
-          <i class="fa fa-trash-o" title="Delete"></i>
-          <i class="fa fa-pencil" title="Edit"></i>
-          <i class="fa fa-envelope-o" title="Email Receipt"></i>
-          <i class="fa fa-download" title="Download Receipt"></i>
-        </td>
-      </tr>
-      <tr>
-        <td><input type="checkbox"></td>
-        <td>Tower A</td>
-        <td>101</td>
-        <td>Cash</td>
-        <td>1,100</td>
-        <td>25/05/2014</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>Rejected(User cancelled payment)</td>
-        <td>
-          <i class="fa fa-list" title="Details"></i>
-          <i class="fa fa-undo" title="Revert"></i>
-          <i class="fa fa-trash-o" title="Delete"></i>
-          <i class="fa fa-pencil" title="Edit"></i>
-          <i class="fa fa-envelope-o" title="Email Receipt"></i>
-          <i class="fa fa-download" title="Download Receipt"></i>
-        </td>
-      </tr>
-      <tr>
-        <td><input type="checkbox"></td>
-        <td>Tower A</td>
-        <td>101</td>
-        <td>Online</td>
-        <td>10,580</td>
-        <td>30/05/2014</td>
-        <td>Andhra Bank</td>
-        <td>04/07/2014</td>
-        <td>10021</td>
-        <td>8712</td>
-        <td>SBI</td>
-        <td>Adjustment in bank account</td>
-        <td>Verified</td>
-        <td>
-          <i class="fa fa-list" title="Details"></i>
-          <i class="fa fa-undo" title="Revert"></i>
-          <i class="fa fa-trash-o" title="Delete"></i>
-          <i class="fa fa-pencil" title="Edit"></i>
-          <i class="fa fa-envelope-o" title="Email Receipt"></i>
-          <i class="fa fa-download" title="Download Receipt"></i>
-        </td>
+        {% endraw %}
       </tr>
     </tbody>
   </table>
 
   <div class="pagination-container">
     <ul class="pagination">
-      <li class="disabled"><a href="#">«</a></li>
+      <li class="disabled"><a href="#">Previous</a></li>
       <li class="active"><a href="#">1</a></li>
       <li><a href="#">2</a></li>
       <li><a href="#">3</a></li>
       <li><a href="#">4</a></li>
       <li><a href="#">5</a></li>
-      <li><a href="#">»</a></li>
+      <li><a href="#">Next</a></li>
     </ul>
   </div>
 </div>
